@@ -1,0 +1,127 @@
+/* ---- MIXINS ---- */
+
+@mixin breakpoint {
+  @media (min-width: 50em) {
+    @content;
+  }
+}
+
+/* ---- FONTS ---- */
+
+@font-face {
+  font-family: "Overpass";
+  src: url("./../assets/fonts/Overpass-VariableFont_wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ---- CUSTOM PROPERTIES ---- */
+
+:root {
+  --hsl-clr-primary: 25 97% 53%;
+  --hsl-clr-secondary: 241 72% 46%;
+
+  --hsl-clr-neutral-100: 0 0% 100%;
+  --hsl-clr-neutral-200: 217 12% 63%;
+  --hsl-clr-neutral-400: 216 12% 54%;
+  --hsl-clr-neutral-600: 213 19% 18%;
+  --hsl-clr-neutral-800: 216 12% 8%;
+  --hsl-clr-neutral-900: 216 12% 5%;
+
+  --hsl-clr-attribution: 228 45% 74%;
+
+  --clr-primary: hsl(var(--hsl-clr-primary));
+  --clr-secondary: hsl(var(--hsl-clr-secondary));
+  --clr-neutral-100: hsl(var(--hsl-clr-neutral-100));
+  --clr-neutral-200: hsl(var(--hsl-clr-neutral-200));
+  --clr-neutral-400: hsl(var(--hsl-clr-neutral-400));
+  --clr-neutral-600: hsl(var(--hsl-clr-neutral-600));
+  --clr-neutral-800: hsl(var(--hsl-clr-neutral-800));
+  --clr-neutral-900: hsl(var(--hsl-clr-neutral-900));
+  --clr-attribution: hsl(var(--hsl-clr-attribution));
+
+  --font-family-default: "Overpass", sans-serif;
+
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+
+  --fs-100: 0.3rem;
+  --fs-200: 0.5rem;
+  --fs-300: 0.75rem;
+  --fs-400: 0.9375rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 1.75rem;
+  --fs-900: 2rem;
+  --fs-special: 3.8rem;
+
+  --fs-attribution: 0.6875rem;
+
+  --animation-name: none;
+  --animation-duration: 0.5s;
+  --animation-delay: 0.5s;
+  --animation-iteration-count: infinite;
+  --animation-direction: alternate;
+  --animation-timing-function: ease-out;
+  --animation-fill-mode: forwards;
+}
+
+/* ---- GENERAL STYLING ----*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid-flow {
+  display: grid;
+}
+
+.flex-flow {
+  display: flex;
+}
+
+.attribution {
+  margin-block-start: 5em;
+
+  font-size: var(--fs-attribution);
+  text-align: center;
+}
+.attribution a {
+  color: var(--clr-attribution);
+}
+
+body {
+  font-family: var(--font-family-default);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+}
